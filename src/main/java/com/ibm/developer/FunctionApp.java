@@ -11,7 +11,7 @@ public class FunctionApp {
 		
 		String result;
 		if (nameArg == null) {
-			result = "Hello! Welcome to Amazing Tekton...";
+			result = "Hello! Welcome to Very Amazing Tekton...";
 		} else {
 			result = "Hello " + nameArg.getAsString();
 		}
