@@ -170,7 +170,7 @@ apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
     name: simple-hosted-pipeline
-  spec:
+spec:
     params:
       - name: repository
         description: >-
