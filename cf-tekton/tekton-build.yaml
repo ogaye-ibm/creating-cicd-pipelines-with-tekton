@@ -83,12 +83,12 @@ spec:
             - name: pipeline-ws
               persistentVolumeClaim:
                 claimName: simple-hosted-pipeline-$(uid)-pvc
-- apiVersion: tekton.dev/v1beta1
-  kind: TriggerBinding
-  metadata:
-    name: manual-run
-  spec:
-    params: null
+  - apiVersion: tekton.dev/v1beta1
+    kind: TriggerBinding
+    metadata:
+      name: manual-run
+    spec:
+      params: null
 - apiVersion: tekton.dev/v1beta1
   kind: EventListener
   metadata:
