@@ -5,7 +5,7 @@ metadata:
 spec:
     params:
       - name: git-repo-url
-      - name: repository
+      - name: path-to-context
         description: The git repo
       - name: branch
         description: the branch for the git repo
@@ -54,8 +54,8 @@ spec:
           params:
             - name: git-repo-url
               value: $(params.git-repo-url)
-            - name: repository
-              value: $(params.repository)
+            - name: path-to-context
+              value: $(params.path-to-context)
             - name: branch
               value: $(params.branch)
             - name: revision
@@ -176,6 +176,7 @@ metadata:
 spec:
     params:
       - name: git-repo-url
+      - name: path-to-context
       - name: branch
         description: the branch for the git repo
         default: master
