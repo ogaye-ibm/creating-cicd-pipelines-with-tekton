@@ -1,0 +1,24 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: gradle-build-java-artifact-from-source
+spec:
+  workspaces:
+  - name: source
+  params:
+    - name: path-to-context
+      description: Path to build.gradle file
+      default: .
+  steps:
+    - name: list-src
+      image: alpine
+      command:
+        - "ls"
+      args:
+        - "$(workspaces.source.path)"
+    - name: mvn
+      image: gcr.io/cloud-builders/gradle
+      workingDir: /workspace/source/$(params.path-to-context)
+      command: ["/usr/bin/gradle"]
+      args:
+        - "clean build -x test"
