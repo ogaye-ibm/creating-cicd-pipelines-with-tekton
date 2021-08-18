@@ -236,7 +236,7 @@ spec:
                   workspace: pipeline-ws
             - name: build
               runAfter:
-                - cra-discovery-scan
+                - clone-task
               workspaces:
                 - name: output
                   workspace: pipeline-ws
