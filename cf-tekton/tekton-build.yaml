@@ -1,8 +1,8 @@
-- apiVersion: tekton.dev/v1beta1
-  kind: TriggerTemplate
-  metadata:
+apiVersion: tekton.dev/v1beta1
+kind: TriggerTemplate
+metadata:
     name: simple-hosted-pipeline
-  spec:
+spec:
     params:
       - name: repository
         description: The git repo
