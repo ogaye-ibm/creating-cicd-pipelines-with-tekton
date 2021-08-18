@@ -1,8 +1,7 @@
 - apiVersion: tekton.dev/v1beta1
   kind: TriggerTemplate
   metadata:
-    #name: simple-hosted-pipeline
-    name: project-trigger-template
+    name: simple-hosted-pipeline
   spec:
     params:
       - name: repository
