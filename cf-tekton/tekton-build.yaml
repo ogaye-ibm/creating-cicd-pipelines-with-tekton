@@ -216,7 +216,7 @@ spec:
         params:
           - name: expression
             value: >-
-              . as $toolchain | ["$(params.repository)"] | if .[0]=="" then
+              . as $toolchain | ["$(params.git-repo-url)"] | if .[0]=="" then
               $toolchain | .services[] |
               select(.toolchain_binding.name=="sample-repo") | .dashboard_url
               else .[0] end
