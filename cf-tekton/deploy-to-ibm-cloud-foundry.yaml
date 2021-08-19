@@ -1,0 +1,32 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: cf-deploy-app
+spec:
+  params:
+    - name: ibm-cloud-region
+    - name: ibmcloud-api
+      default: cloud.ibm.com
+    - name: cf-org
+    - name: cf-space
+    - name: cf-app
+    - name: cf-target-url
+  workspaces:
+    - name: source
+  steps:
+    - name: deploy-app
+      image: 'icr.io/continuous-delivery/pipeline/pipeline-base-image:2.6'
+      env:
+        - name: IBMCLOUD_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: secure-properties
+              key: apikey
+      command: ["/bin/bash", "-c"]
+      args:
+        - set -e -o pipefail;
+          ibmcloud login -a $(params.ibmcloud-api) -r $(params.ibm-cloud-region);
+          ibmcloud version;
+          ibmcloud plugin list;
+          ibmcloud target -o 'Client Developer Advocacy US' -s DevUS;
+          ibmcloud cf push $(cf-app);

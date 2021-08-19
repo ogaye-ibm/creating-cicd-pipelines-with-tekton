@@ -27,7 +27,7 @@ spec:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
       metadata:
-        generateName: build-
+        generateName: build-t
       spec:
         serviceAccountName: service-account
         pipelineRef:
@@ -129,6 +129,8 @@ spec:
           value: $(params.cf-app)
         - name: ibmcloud-api
           value: $(params.ibmcloud-api)
+        - name: cf-target-url
+          value: $(params.cf-target-url)
       workspaces:
         - name: source
           workspace: git-repo
