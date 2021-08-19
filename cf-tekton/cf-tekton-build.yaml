@@ -18,6 +18,9 @@ spec:
     - name: ibm-cloud-region
       description: The region where the cluster resides
       default: us-south
+    - name: cf-org
+    - name: cf-space
+    - name: cf-app
   resourcetemplates:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
