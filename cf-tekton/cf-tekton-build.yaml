@@ -31,14 +31,10 @@ spec:
             value: $(params.path-to-context)
           - name: path-to-manifest-file
             value: $(params.path-to-manifest-file)
-          - name: ibmcloud-api
-            value: $(params.ibmcloud-api)
           - name: ibmcloud-region
             value: $(params.ibmcloud-region)
           - name: git-repo-url
             value: $(params.git-repo-url)
-          - name: cf-target-url
-            value: $(params.cf-target-url)
           - name: cf-org
             value: $(params.cf-org)
           - name: cf-space
@@ -74,7 +70,6 @@ spec:
     - name: ibmcloud-api
     - name: git-repo-url
     - name: path-to-context
-    - name: path-to-manifest-file
     - name: ibmcloud-region
     - name: cf-org
     - name: cf-space
@@ -116,6 +111,8 @@ spec:
       params:
         - name: cf-org
           value: $(params.cf-org)
+        - name: ibmcloud-region
+          value: $(params.ibmcloud-region)
         - name: cf-space
           value: $(params.cf-space)
         - name: cf-app
