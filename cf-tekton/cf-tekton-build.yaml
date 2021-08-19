@@ -84,7 +84,7 @@ spec:
           workspace: git-repo
     - name: build-artifact-from-source
       taskRef:
-        name: maven-build-java-artifact-from-source
+        name: gradle-build-java-artifact-from-source
       runAfter:
         - git-clone
       params:
