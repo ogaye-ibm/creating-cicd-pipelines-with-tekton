@@ -117,8 +117,6 @@ spec:
       runAfter:
         - build-artifact-from-source
       params:
-        - name: cf-target-url
-          value: $(params.cf-target-url)
         - name: cf-org
           value: $(params.cf-org)
         - name: cf-space
