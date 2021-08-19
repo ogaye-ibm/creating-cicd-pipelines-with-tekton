@@ -29,8 +29,6 @@ spec:
         params:
           - name: path-to-context
             value: $(params.path-to-context)
-          - name: path-to-manifest-file
-            value: $(params.path-to-manifest-file)
           - name: ibmcloud-region
             value: $(params.ibmcloud-region)
           - name: git-repo-url

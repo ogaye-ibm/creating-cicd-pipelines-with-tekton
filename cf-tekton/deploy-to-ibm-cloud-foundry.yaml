@@ -28,5 +28,5 @@ spec:
           ibmcloud login -a $(params.ibmcloud-api) -r $(params.ibmcloud-region);
           ibmcloud version;
           ibmcloud plugin list;
-          ibmcloud target -o 'Client Developer Advocacy US' -s DevUS;
-          ibmcloud cf push $(cf-app);
+          ibmcloud target -o $(params.cf-org) -s $(params.cf-space);
+          ibmcloud cf push $(params.cf-app);
