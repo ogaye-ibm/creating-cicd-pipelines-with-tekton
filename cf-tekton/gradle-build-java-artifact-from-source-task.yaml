@@ -16,9 +16,9 @@ spec:
         - "ls"
       args:
         - "$(workspaces.source.path)"
-    - name: mvn
+    - name: gradle
       image: gcr.io/cloud-builders/gradle
       workingDir: /workspace/source/$(params.path-to-context)
       command: ["/usr/bin/gradle"]
       args:
-        - "clean build -x test"
+        - "build"
