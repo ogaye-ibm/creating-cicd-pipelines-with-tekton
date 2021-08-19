@@ -10,7 +10,7 @@ spec:
     description: The path to the build context, used by Kaniko
     default: .
   - name: path-to-manifest-file
-    description: The path to the yaml file describe how to deploy the application. 
+    description: The path to the yaml file describe how to deploy the application.
     default: manifest.yaml
   - name: api-url
     description: The api url for interacting with ibm cloud
