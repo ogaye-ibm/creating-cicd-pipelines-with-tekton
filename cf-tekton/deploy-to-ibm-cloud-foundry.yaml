@@ -4,7 +4,7 @@ metadata:
   name: cf-deploy-app
 spec:
   params:
-    - name: ibm-cloud-region
+    - name: ibmcloud-region
     - name: ibmcloud-api
       default: cloud.ibm.com
     - name: cf-org
@@ -25,7 +25,7 @@ spec:
       command: ["/bin/bash", "-c"]
       args:
         - set -e -o pipefail;
-          ibmcloud login -a $(params.ibmcloud-api) -r $(params.ibm-cloud-region);
+          ibmcloud login -a $(params.ibmcloud-api) -r $(params.ibmcloud-region);
           ibmcloud version;
           ibmcloud plugin list;
           ibmcloud target -o 'Client Developer Advocacy US' -s DevUS;
