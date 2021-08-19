@@ -53,6 +53,8 @@ spec:
             value: $(params.cf-app)
           - name: cf-target-url
             value: $(params.cf-target-url)
+          - name: ibmcloud-api
+            value: $(params.ibmcloud-api)
         workspaces:
           - name: git-repo
             persistentVolumeClaim:
