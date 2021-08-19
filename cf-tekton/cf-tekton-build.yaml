@@ -41,6 +41,12 @@ spec:
             value: $(params.ibm-cloud-region)
           - name: git-repo-url
             value: $(params.git-repo-url)
+          - name: cf-org
+            value: $(params.cf-org)
+          - name: cf-space
+            value: $(params.cf-space)
+          - name: cf-app
+            value: $(params.cf-app)
         workspaces:
           - name: git-repo
             persistentVolumeClaim:
