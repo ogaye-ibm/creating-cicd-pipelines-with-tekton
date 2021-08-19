@@ -93,3 +93,20 @@ spec:
       workspaces:
         - name: source
           workspace: git-repo
+    - name: deploy-artifact-to-ibm-cloud-foundry
+      taskRef:
+        name: cf-deploy-app
+      runAfter:
+        - build-artifact-from-source
+      params:
+        - name: cf-org
+          value: $(params.cf-org)
+        - name: ibm-cloud-region
+          value: $(params.ibm-cloud-region)
+        - name: cf-space
+          value: $(params.cf-space)
+        - name: cf-app
+          value: $(params.cf-app)
+      workspaces:
+        - name: source
+          workspace: git-repo
