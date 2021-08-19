@@ -26,5 +26,5 @@ spec:
       args:
         - set -e -o pipefail;
           ibmcloud login -a $(params.ibmcloud-api) -r $(params.ibmcloud-region);
-          ibmcloud target -o $(params.cf-org) -s $(params.cf-space);
+          ibmcloud cf target -o $(params.cf-org) -s $(params.cf-space);
           ibmcloud cf push $(params.cf-app);
