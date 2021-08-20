@@ -25,6 +25,8 @@ spec:
       command: ["/bin/bash", "-c"]
       args:
         - set -e -o pipefail;
+          pwd;
+          ls -l;
           ibmcloud login -a $(params.ibmcloud-api) -r $(params.ibmcloud-region) -g omarg-rg;
           ibmcloud target --cf-api 'https://api.us-south.cf.cloud.ibm.com' -o 'Client Developer Advocacy US' -s DevUS;
           ibmcloud cf push $(params.cf-app);
