@@ -34,5 +34,5 @@ spec:
           ibmcloud login -a $(params.ibmcloud-api) -r $(params.ibmcloud-region) -g omarg-rg;
           ibmcloud target --cf-api 'https://api.us-south.cf.cloud.ibm.com' -o 'Client Developer Advocacy US' -s DevUS;
           ibmcloud cf apps;
-          ibmcloud target --cf-api 'https://api.us-south.cf.cloud.ibm.com' -o $(params.cf-org) -s $(params.cf-space);
+          ibmcloud target --cf-api 'https://api.us-south.cf.cloud.ibm.com' -o 'Client Developer Advocacy US' -s $(params.cf-space);
           ibmcloud cf push -f $(workspaces.source.path)/manifest.yaml $(params.cf-app);
