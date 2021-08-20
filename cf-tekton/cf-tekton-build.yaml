@@ -11,6 +11,7 @@ spec:
       default: .
     - name: ibmcloud-region
       default: us-south
+    - name: ibmcloud-rg
     - name: cf-target-url
     - name: cf-org
     - name: cf-space
@@ -43,6 +44,8 @@ spec:
             value: $(params.cf-target-url)
           - name: ibmcloud-api
             value: $(params.ibmcloud-api)
+          - name: ibmcloud-rg
+            value: $(params.ibmcloud-rg)
         workspaces:
           - name: git-repo
             persistentVolumeClaim:
@@ -73,6 +76,7 @@ spec:
     - name: cf-space
     - name: cf-app
     - name: cf-target-url
+    - name: ibmcloud-rg
   workspaces:
     - name: git-repo
       description: Workspace for holding the cloned source code from the git-repo
@@ -119,6 +123,8 @@ spec:
           value: $(params.ibmcloud-api)
         - name: cf-target-url
           value: $(params.cf-target-url)
+        - name: ibmcloud-rg
+          value: $(params.ibmcloud-rg)
       workspaces:
         - name: source
           workspace: git-repo

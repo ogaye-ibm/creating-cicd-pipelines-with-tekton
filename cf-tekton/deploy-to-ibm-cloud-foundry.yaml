@@ -5,6 +5,7 @@ metadata:
 spec:
   params:
     - name: ibmcloud-region
+    - name: ibmcloud-rg
     - name: ibmcloud-api
       default: cloud.ibm.com
     - name: cf-org
@@ -29,10 +30,10 @@ spec:
           echo $(params.cf-target-url);
           echo $(params.cf-org);
           echo $(params.cf-space);
+          echo $(params.ibmcloud-rg)
 
           ls -l $(workspaces.source.path);
-          ibmcloud login -a $(params.ibmcloud-api) -r $(params.ibmcloud-region) -g omarg-rg;
-          ibmcloud target --cf-api 'https://api.us-south.cf.cloud.ibm.com' -o 'Client Developer Advocacy US' -s DevUS;
+          ibmcloud login -a $(params.ibmcloud-api) -r $(params.ibmcloud-region) -g $(params.ibmcloud-rg);
           ibmcloud cf apps;
           ibmcloud target --cf-api $(params.cf-target-url) -o $(params.cf-org) -s $(params.cf-space);
           ibmcloud cf push -f $(workspaces.source.path)/manifest.yaml $(params.cf-app);
